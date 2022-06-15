@@ -1,39 +1,50 @@
 import React from 'react';
+import Header from './component/Header';
+import Body from './component/Body';
 import {
   ChakraProvider,
   Box,
+  Button,
+  ButtonGroup, 
   Text,
   Link,
   VStack,
   Code,
   Grid,
-  theme,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+    <ChakraProvider>
+      <Box
+        textAlign="center"
+        fontSize="xl"
+        boxShadow="outline"
+        p="6"
+        rounded="md"
+        bg="white"
+        bgColor="#C0B283"
+        color="#76323F"
+      >
+        <Header />
+        <Button>Ver más</Button>
+
+      </Box>
+      <Box
+        maxW='sm' 
+        borderRadius='lg' 
+        overflow='hidden'
+        textAlign="center"
+        fontSize="xl"
+        boxShadow="dark-lg"
+        p="6"
+        rounded="md"
+        bg="white"
+        bgColor="#DCD0C0"
+        color="#76323F"
+      >
+        <Body />
+        <Button>Reservar</Button>
       </Box>
     </ChakraProvider>
   );
